@@ -30,7 +30,7 @@ BNCpp_OPENGL_LIBS       = -lGL -lGLU -lglut -lGLEW #-lX11
 TARGET = run/BNcpp
 CC = g++
 LD = g++
-CFLAGS = -O3 -Wall -Werror -ansi -pedantic  $(BNCpp_INCLUDE_PATH) -I./include -I./src
+CFLAGS = -O3 -std=c++17  -Wall -Werror -ansi -pedantic  $(BNCpp_INCLUDE_PATH) -I./include -I./src
 LFLAGS = -O3 -Wall -Werror -ansi -pedantic $(BNCpp_LIBRARY_PATH)
 LIBS = $(BNCpp_OPENGL_LIBS) $(BNCpp_SUITESPARSE_LIBS) $(BNCpp_BLAS_LIBS)
 
