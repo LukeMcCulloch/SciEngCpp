@@ -28,5 +28,34 @@ void linefit() {
     SimpleArray<Number> y(n);
 
     //Read the data points
+    for (int i = 0; i < n; i++) {
+        cin >> x[i] >> y[i];
+    }
 
+    // accumulte sums Sx and Sy in double(?) precision
+    double sx = 0.0;
+    double sy = 0.0;
+    for (int i =0; i < n; i++) {
+        sx += x[i];
+        sy += y[i];
+    }
+
+    //compute coefficients
+    double sx_over_n = sx/n;
+    double stt = 0.0;
+    double b = 0.0;
+    for (int i = 0; i < n; i++) {
+        double ti = x[i] -sx_over_n;
+        stt += ti * ti;
+        b += ti * y[i];
+    }
+    b /= stt;
+    double a = (sy - sx*b)/n;
+
+    // no destructor calls needed, 
+    // because no "new" calls were needed.
+    // delete [] x;
+    // delete [] y;
+
+    cout << a << "" << b << endl;
 }
