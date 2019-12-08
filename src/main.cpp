@@ -4,8 +4,9 @@
 
 #include <cmath>
 
-//#include "xxx.hpp"
-
+#include "point.h"
+#include "line.h"
+#include "SimpleFloatArray.h"
 
 
 using namespace std;
@@ -14,12 +15,22 @@ using std::endl;
 
 
 
+void linefit() {
+    //Create arrays with the desired number of elements
+    int n=0;
+    cout << "give the size of the arrays n = " << n << endl;
+    cin >> n;
+    cout << "n = " << n << endl;
+    SimpleFloatArray x(n);
+    SimpleFloatArray y(n);
 
+    //Read the data points
+}
 
-//int etarraybasic (SolverManager& SM){
 int main (){
 
     cout << "hello world!" << endl;
+    linefit();
     
     return 0;
 

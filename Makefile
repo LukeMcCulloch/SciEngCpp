@@ -44,6 +44,9 @@ OBJECTS := $(addprefix obj/,$(notdir $(SOURCES:.cpp=.o)))
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@echo "headers = " $(HEADERS)
+	@echo "sources = " $(SOURCES)
+	@echo "objects = " $(OBJECTS)
 	$(LD) $(OBJECTS) -o $(TARGET) $(CFLAGS) $(LFLAGS) $(LIBS)
 
 obj/%.o: src/%.cpp ${HEADERS}
