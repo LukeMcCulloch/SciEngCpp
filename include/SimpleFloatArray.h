@@ -10,8 +10,8 @@ public:
    float& operator[](int i);                              // Subscripting
    int numElts();                                         // Number of elements
    SimpleFloatArray& operator+(const SimpleFloatArray&);  // Array assignment
-   SimpleFloatArray& operator=(float);                    // Change size
-
+   SimpleFloatArray& operator=(float);                    // scalar assignment
+   void setSize(int n);                                   // Change size 
 private:
    int num_elts;                                          // Number of elements
    float* ptr_to_data;                                    // Pointer to builtin array
