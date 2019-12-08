@@ -4,9 +4,12 @@
 #include <limits>
 #include <cmath>
 
+
+#include "utilities.h"
 #include "point.h"
 #include "line.h"
-#include "SimpleFloatArray.h"
+#include "SimpleArray.h"
+#include "SimpleArray.cpp" //https://www.codeproject.com/Articles/48575/How-to-define-a-template-class-in-a-h-file-and-imp
 
 #include "linefit.hpp"
 
@@ -20,8 +23,9 @@ void linefit() {
     cout << "give the size of the arrays n = " << n << endl;
     cin >> n;
     cout << "n = " << n << endl;
-    SimpleFloatArray x(n);
-    SimpleFloatArray y(n);
+
+    SimpleArray<Number> x(n);
+    SimpleArray<Number> y(n);
 
     //Read the data points
 
