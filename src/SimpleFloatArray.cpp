@@ -27,7 +27,13 @@ void SimpleFloatArray::copy(const SimpleFloatArray& a) {
     //Copy a's elements to the elements of *this
     float* p = ptr_to_data + num_elts;
     float* q = a.ptr_to_data + num_elts;
-    while (p > ptr_to_data)*--p = *--q;
+    while (p > ptr_to_data) *--p = *--q; 
+    /*
+    * prefix has precedence over pointer
+    *--p = *--q  <=> *(--p) = *(--q)
+    so we decrement both pointers and then dereference
+    to set each member of the array in thorough fashion
+    */
 }
 
 SimpleFloatArray::~SimpleFloatArray() {
@@ -40,4 +46,12 @@ float& SimpleFloatArray::operator[](int i) {
 
 int SimpleFloatArray::numElts() {
     return num_elts;
+}
+
+SimpleFloatArray& SimpleFloatArray::operator=(const SimpleFloatArray& rjs) {
+    if (ptr_to_data != rhs.ptr_to_data) { // do not copy thyself
+        setSize( rhs.num_elts );
+        copy(rhs);
+    }
+    return *this;
 }
