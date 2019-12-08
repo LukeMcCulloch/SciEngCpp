@@ -18,3 +18,4 @@ private:
                                                           // of elements
    void copy(const SimpleFloatArray& a);                  // Copy elements of a into this
 };
+
