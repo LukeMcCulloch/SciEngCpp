@@ -14,14 +14,15 @@ using namespace std;
 using std::cout;
 using std::endl;
 
-// void linefitit() {
-//     //Create arrays with the desired number of elements
-//     int n=0;
-//     cout << "give the size of the arrays n = " << n << endl;
-//     cin >> n;
-//     cout << "n = " << n << endl;
-//     SimpleFloatArray x(n);
-//     SimpleFloatArray y(n);
+void linefit() {
+    //Create arrays with the desired number of elements
+    int n=0;
+    cout << "give the size of the arrays n = " << n << endl;
+    cin >> n;
+    cout << "n = " << n << endl;
+    SimpleFloatArray x(n);
+    SimpleFloatArray y(n);
 
-//     //Read the data points
-// }
+    //Read the data points
+
+}

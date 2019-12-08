@@ -1,7 +1,6 @@
 #include <cassert>
 #include <iostream>
 #include <limits>
-#include "linefit.cpp"
 
 #include "linefit.hpp"
 
@@ -13,8 +12,8 @@ using std::endl;
 int main (){
 
     cout << "hello world!" << endl;
-    
-    //linefit();
+
+    linefit();
     
     return 0;
 
