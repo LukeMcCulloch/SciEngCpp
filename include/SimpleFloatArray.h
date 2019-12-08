@@ -9,7 +9,7 @@ public:
    ~SimpleFloatArray();                                   // Destroy array
    float& operator[](int i);                              // Subscripting
    int numElts();                                         // Number of elements
-   SimpleFloatArray& operator+(const SimpleFloatArray&);  // Array assignment
+   SimpleFloatArray& operator=(const SimpleFloatArray&);  // Array assignment
    SimpleFloatArray& operator=(float);                    // scalar assignment
    void setSize(int n);                                   // Change size 
 private:
