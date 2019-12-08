@@ -30,11 +30,14 @@ void SimpleFloatArray::copy(const SimpleFloatArray& a) {
     while (p > ptr_to_data)*--p = *--q;
 }
 
-
 SimpleFloatArray::~SimpleFloatArray() {
     delete [] ptr_to_data;
 }
 
 float& SimpleFloatArray::operator[](int i) {
     return ptr_to_data[i];
+}
+
+int SimpleFloatArray::numElts() {
+    return num_elts;
 }
