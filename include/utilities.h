@@ -1,3 +1,4 @@
+#pragma once
 
 #include <cmath>
 #include <float.h>

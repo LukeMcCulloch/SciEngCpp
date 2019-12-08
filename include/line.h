@@ -1,3 +1,5 @@
+#pragma once
+
 #include "utilities.h"
 
 class Point; //fwd declaration

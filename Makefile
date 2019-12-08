@@ -37,7 +37,7 @@ LIBS = $(BNCpp_OPENGL_LIBS) $(BNCpp_SUITESPARSE_LIBS) $(BNCpp_BLAS_LIBS)
 ########################################################################################
 ## !! Do not edit below this line
 
-HEADERS := $(wildcard include/*.h)
+HEADERS := $(wildcard include/*.h) $(wildcard include/*.hpp)
 SOURCES := $(wildcard src/*.cpp)
 OBJECTS := $(addprefix obj/,$(notdir $(SOURCES:.cpp=.o)))
 
