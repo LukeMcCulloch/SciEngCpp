@@ -12,3 +12,12 @@
 
 typedef Point Node;        //Node class that behaves like a point
 
+class Element {
+
+public:
+   int operator[](int i) const;
+   int numNodes()        const;
+   friend istream& operator>>(istream&, Element&);
+private:
+
+}
