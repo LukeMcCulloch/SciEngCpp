@@ -18,7 +18,7 @@ SimpleArray<T>::SimpleArray() {
 
 template<class T>
 SimpleArray<T>::~SimpleArray() {
-    
+
    delete [] ptr_to_data;
 
 }
@@ -47,12 +47,12 @@ void SimpleArray<T>::copy(const SimpleArray<T>& a) {
 
 
 template<class T>
-T& SimpleArray<T>::operator[](int i) {
+T& SimpleArray<T>::operator[](int i) const {
    return ptr_to_data[i];
 }
 
 template<class T>
-int SimpleArray<T>::numElts() {
+int SimpleArray<T>::numElts() const {
    return num_elts;
 }
 
