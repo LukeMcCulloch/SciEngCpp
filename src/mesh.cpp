@@ -12,27 +12,9 @@
 #include "SimpleArray.h"
 #include "SimpleArray.cpp" 
 
-typedef Point Node;        //Node class that behaves like a point
+#include "element.hpp"
 
-//extern istream& operator>>(istream& is, const Element& i);
-
-class Element {
-
+class Mesh {
 public:
-   int operator[](int i) const;
-   int numNodes()        const;
-   //friend istream& operator>>(istream&, Element&);
-private:
-   SimpleArray<int> node_numbers;
+   bool checkElementAngles(Number angle_threshold) const;
 };
-
-//
-/////////////////////////////////////////////////////////
-// implementation
-int Element::operator[](int i) const {
-   return node_numbers[i];
-}
-
-int Element::numNodes() const {
-   return node_numbers.numElts();
-}
