@@ -10,15 +10,13 @@
 #include "line.h"
 
 #include "SimpleArray.h"
-//#include "SimpleArray.cpp" 
 
 #include "element.hpp"
-//#include "element.cpp"
 
 #include "mesh.hpp"
 
 class Mesh {
 public:
    bool checkElementAngles(Number angle_threshold) const;
-   //Number maxAngle(const Element& e) const;
+   Number maxAngle(const Element& e) const;
 };
