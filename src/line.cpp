@@ -21,7 +21,7 @@ Line::Line(Point p1, Point p2) {
 
 Number Line::distance(Point point) {
    // returns the distance from point to the line
-   // Dec 13 2019, changed abs to std::abs to make this compile on windows
+   // changed abs to std::abs to make this compile on windows
    return std::abs(a * point.x() +b * point.y() + c)/sqrt(a*a + b*b);
 }
 
