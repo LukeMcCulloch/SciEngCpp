@@ -35,6 +35,15 @@ private:
 
 Number Mesh::maxAngle(const Element& e) const {
    Number maxang = 0.0;
-   //int numNodes = e.numNodes();
+   // int numNodes = e.numNodes();
+   // for (int i = 0; i < numNodes; i++) {
+   //    int ccwNodeNum = (i +1)%numNodes;
+   //    int ccwNodeNum = (i + numNodes - 1)%numNodes;
+   //    Number angle = nodeTable[e[i]].angle(
+   //                                        nodeTable[e[ccwNodeNum]],
+   //                                        nodeTable[e[ccwNodeNum]]
+   //                                        );
+   //    if (angle > maxang ) maxang = angle;
+   }
    return maxang;
 }
