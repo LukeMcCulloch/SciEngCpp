@@ -28,3 +28,13 @@ private:
    SimpleArray<Node>    node_table;
    SimpleArray<Element> elemetn_table;
 };
+
+//
+/////////////////////////////////////////////////////////
+// implementation
+
+Number Mesh::maxAngle(const Element& e) const {
+   Number maxang = 0.0;
+   //int numNodes = e.numNodes();
+   return maxang;
+}

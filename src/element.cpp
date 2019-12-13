@@ -31,6 +31,7 @@ private:
 //
 /////////////////////////////////////////////////////////
 // implementation
+
 int Element::operator[](int i) const {
    return node_numbers[i];
 }
