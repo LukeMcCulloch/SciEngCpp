@@ -1,5 +1,7 @@
 #include "SimpleArray.h"
 
+
+
 template<class T>
 SimpleArray<T>::SimpleArray(int n) {
 
