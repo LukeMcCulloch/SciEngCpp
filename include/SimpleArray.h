@@ -1,7 +1,7 @@
 #pragma once
 
 template<class T>
-class SimpleArray {
+class SimpleArray {                                   // page 101
    
 public:
    SimpleArray(int n);                                // Create an array of n elements

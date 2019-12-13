@@ -1,3 +1,3 @@
 #pragma once
 
-class Mesh;
+class Element;
