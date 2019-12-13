@@ -1,6 +1,10 @@
 #include "line.h"
 #include "point.h"
 
+
+
+
+
 Line::Line(Point p1, Point p2) {
    //construct a line through points p1 and p2
    if (p1.x() == p2.x()) {   // the line is vertical
@@ -17,7 +21,8 @@ Line::Line(Point p1, Point p2) {
 
 Number Line::distance(Point point) {
    // returns the distance from point to the line
-   return abs(a * point.x() +b * point.y() + c)/sqrt(a*a + b*b);
+   // Dec 13 2019, changed abs to std::abs to make this compile on windows
+   return std::abs(a * point.x() +b * point.y() + c)/sqrt(a*a + b*b);
 }
 
 Number Line::parallelism_tolerance = .01745; // 1 deg in radians
