@@ -19,33 +19,36 @@ Number Point::distance(Line line) {
    return line.distance(*this);
 }
 
-Number Point::x() {return the_x;}
-Number Point::y() {return the_y;}
+Number Point::x()  {return the_x;}
+Number Point::y()  {return the_y;}
+Number Point::x() const {return the_x;}
+Number Point::y() const {return the_y;}
 
 
-Number Point::dot(Point p1, Point p2) {
-   Number x21 = p1.the_x;
-   Number y21 = p1.the_y;
+
+Number dot( const Point& p1,  const Point& p2) {
+   Number x21 = p1.x();
+   Number y21 = p1.y();
    
-   Number x22 = p2.the_x;
-   Number y22 = p2.the_y;
+   Number x22 = p2.x();
+   Number y22 = p2.y();
 
    return x21*x22 + y21*y22;
 
 }
 
-Number Point::cross(Point p1, Point p2) {
-   Number x21 = p1.the_x;
-   Number y21 = p1.the_y;
+Number cross( const Point& p1,  const Point& p2) {
+   Number x21 = p1.x();
+   Number y21 = p1.y();
    
-   Number x22 = p2.the_x;
-   Number y22 = p2.the_y;
+   Number x22 = p2.x();
+   Number y22 = p2.y();
 
    return x21*y22 - y21*x22;
 
 }
 
-Number Point::angle(Point p1, Point p3) {
+Number Point::angle( const Point& p1,  const Point& p3) {
    // *this is p2, the point about which 
    //  the rays p1 and p3 form an angle
    Number x21 = p1.the_x - the_x;
