@@ -50,8 +50,7 @@ bool Mesh:: checkElementAngles(Number angle_threshold) const {
          std::cout << "Element [";
          int nn = e.numNodes();
          for (int i = 0; i < nn; i++) {
-            std::cout << e
-            //node_table[e[i]]
+            std::cout << node_table[e[i]]
             << "";
          }
          std::cout << "] has a large angle." << std::endl;
@@ -61,3 +60,4 @@ bool Mesh:: checkElementAngles(Number angle_threshold) const {
 
    return anglesOK;
 }
+

@@ -85,3 +85,11 @@ SimpleArray<T>& SimpleArray<T>::operator=(T rhs) {
    while (p > ptr_to_data) *--p = rhs; 
    return *this;
 }
+
+
+
+// std::ostream& operator<<(std::ostream& ostream, const SimpleArray<T>& rhs) {
+//    int nn = e.numNodes();
+//    for (int i = 0; i < nn; i++) ostream << e.node_numbers[i];
+//    return ostream;
+// }

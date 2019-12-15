@@ -1,5 +1,8 @@
 #pragma once
 
+#include <iostream>
+#include <istream>
+
 #include "utilities.h"
 
 class Line; //fwd declaration
@@ -22,6 +25,8 @@ public:
    Number angle( const Point& p1,  const Point& p2); // page 116 
    //Number dot( const Point& p1,  const Point& p2);
    //Number cross( const Point& p1,  const Point& p2);
+
+   friend std::ostream&  operator<<(std::ostream&, const Point& );
 
 private:
    Number the_x;                // x-coordinate

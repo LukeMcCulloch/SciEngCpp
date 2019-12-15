@@ -61,3 +61,9 @@ Number Point::angle( const Point& p1,  const Point& p3) {
 
    return atan2( cross(v21,v21), dot(v21,v23) );
 }
+
+
+std::ostream& operator<<(std::ostream& ostream, const Point& p) {
+   ostream <<  p.the_x << p.the_y << "";
+   return ostream;
+}
