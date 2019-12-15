@@ -33,3 +33,9 @@ Number Mesh::maxAngle(const Element& e) const {
    }
    return maxang;
 }
+
+bool Mesh:: checkElementAngles(Number angle_threshold) const {
+   bool anglesOK = true;
+
+   return anglesOK;
+}
