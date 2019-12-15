@@ -26,7 +26,8 @@ public:
    //Number dot( const Point& p1,  const Point& p2);
    //Number cross( const Point& p1,  const Point& p2);
 
-   friend std::ostream&  operator<<(std::ostream&, const Point& );
+   friend std::istream& operator>>(std::istream&, Point& );
+   friend std::ostream& operator<<(std::ostream&, const Point& );
 
 private:
    Number the_x;                // x-coordinate

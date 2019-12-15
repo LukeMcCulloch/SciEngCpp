@@ -61,3 +61,17 @@ bool Mesh:: checkElementAngles(Number angle_threshold) const {
    return anglesOK;
 }
 
+std::istream& operator>>(std::istream& instream, Mesh& m) {
+   int nNodes;
+   int nElements;
+   instream >> nNodes >> nElements;
+   m.node_table.setSize(nNodes);
+   m.element_table.setSize(nElements);
+   for (int nodeNum = 0; nodeNum < nNodes; nodeNum++) {
+      instream >> m.node_table[nodeNum]; // read in one node (point)
+   }
+   for (int elementNum = 0; elementNum < nElements; elementNum++) {
+      instream >>m.element_table[elementNum];  // read in one element
+   }
+   return instream;
+}

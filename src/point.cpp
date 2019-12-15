@@ -62,6 +62,15 @@ Number Point::angle( const Point& p1,  const Point& p3) {
    return atan2( cross(v21,v21), dot(v21,v23) );
 }
 
+std::istream& operator>>(std::istream& instream, Point& p) {
+   //int n;
+   //instream >> n;
+   //p.node_numbers.setSize(n);
+   //for (int i = 0; i < n; i++) instream >> p.node_numbers[i];
+
+   instream >> p.the_x >> p.the_y;
+   return instream;
+}
 
 std::ostream& operator<<(std::ostream& ostream, const Point& p) {
    ostream <<  p.the_x << p.the_y << "";
