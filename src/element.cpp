@@ -30,3 +30,9 @@ std::istream& operator>>(std::istream& instream, Element& e) {
    for (int i = 0; i < n; i++) instream >> e.node_numbers[i];
    return instream;
 }
+
+std::ostream& operator<<(std::ostream& ostream, const Element& e) {
+   int nn = e.numNodes();
+   for (int i = 0; i < nn; i++) ostream << e.node_numbers[i];
+   return ostream;
+}
