@@ -41,6 +41,13 @@ bool Mesh:: checkElementAngles(Number angle_threshold) const {
    /* 
    * angle_threshold is the max angle allowable
    * maxAngle is the max angle computed
+
+   the issue:  this function exploits knowledge of the 
+   mesh representation directly.  This is a weakness 
+   because, conceptually, this function is 
+   independent of representation of the mesh.
+   But here, if the mesh rep changes, then this function 
+   has to change.  Let's fix that.
    */
    bool anglesOK = true;
    int ne = numElements();
