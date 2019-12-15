@@ -12,12 +12,18 @@ using std::endl;
 
 int main (){
 
-    cout << "hello world!" << endl;
+   cout << "hello world!" << endl;
 
-    linefit();
+   linefit();
     
-    return 0;
+   return 0;
 
-    Mesh m;
+   Mesh m;
+
+   cin >> m;
+
+   Number angle_threshold;
+   cin >> angle_threshold;
+   //bool anglesOK ? EXIT_SUCCESS , EXIT_FAILURE;
 
 }
