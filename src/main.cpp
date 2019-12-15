@@ -3,6 +3,7 @@
 #include <limits>
 
 #include "linefit.hpp"
+#include "mesh.hpp"
 
 using namespace std;
 using std::cout;
@@ -16,5 +17,7 @@ int main (){
     linefit();
     
     return 0;
+
+    Mesh m;
 
 }

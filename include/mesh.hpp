@@ -1,5 +1,9 @@
 #pragma once
 
+
+#include "point.h"
+#include "element.hpp"
+
 typedef Point Node; 
 
 class Mesh {
