@@ -24,6 +24,7 @@ public:
    void advance()       { cur = cur->link;  }
 private:
    typename List<T>::Node* cur;
+   //auto List<T>::Node* cur;
 };
 
 

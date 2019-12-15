@@ -3,6 +3,7 @@
 #include <limits>
 
 #include "linefit.hpp"
+#include "list.h"
 #include "mesh.hpp"
 
 using namespace std;
