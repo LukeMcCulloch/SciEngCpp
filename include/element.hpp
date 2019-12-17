@@ -45,7 +45,7 @@ public:
 //iteration
    bool more() const { return cur >= 0; } // do more nodes remain to be iterated?
    void advance()    { --cur; }
-   const Node& current() const { return *node_ptrs[cur]; }
+   Node& current() const { return *node_ptrs[cur]; }
 
 //Neighbor of current iterate
    Node& ccwNeighbor() const { return *node_ptrs[ ( cur + 1)%node_ptrs.numElts() ]; }

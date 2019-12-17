@@ -36,3 +36,18 @@ std::ostream& operator<<(std::ostream& ostream, const Element& e) {
    for (int i = 0; i < nn; i++) ostream << e.node_numbers[i];
    return ostream;
 }
+
+
+
+
+Number Element::maxAngle() const {
+   Number maxang = 0.0;
+   for (NodesOfElement nodes(*this); nodes.more(); nodes.advance()) {
+      Number angle = nodes.current().angle(
+                                          nodes.cwNeighbor(),
+                                          nodes.ccwNeighbor() 
+                                          );
+      if (angle > maxang) maxang = angle;
+   }
+   return maxang;
+}
