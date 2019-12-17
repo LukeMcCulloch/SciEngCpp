@@ -17,7 +17,7 @@ public:
    int operator[](int i) const;
    int numNodes()        const;
    
-   //friend NodesOfElement;            // iterator over nodes of an element
+   friend class NodesOfElement;            // iterator over nodes of an element
 
    friend std::istream& operator>>(std::istream&, Element& );
    friend std::ostream& operator<<(std::ostream&, const Element& );
@@ -37,24 +37,25 @@ private:
 
 
 
-// class NodesOfElement {
-// public:
-//     NodesOfElement(const Element& e) :
-//         node_ptrs(e.node_ptrs), cur(e.node_ptrs.numElts()-1) {}
+class NodesOfElement {
+public:
+   NodesOfElement(const Element& e) :
+      node_ptrs(e.node_ptrs), cur(e.node_ptrs.numElts()-1) {}
 
-// //iteration
-//     bool more() const { return cur >= 0; } // do more nodes remain to be iterated?
-//     void advance()    { --cur; }
-//     const Node& current() const { return *node_ptrs[cur]; }
+//iteration
+   bool more() const { return cur >= 0; } // do more nodes remain to be iterated?
+   void advance()    { --cur; }
+   const Node& current() const { return *node_ptrs[cur]; }
 
-// //Neighbor of current iterate
-//     Node& ccwNeighbor() const { return *node_ptrs[ ( cur + numNodes -1 ) ]; }}
-//     Node& ccwNeighbor() const{
-//         return *node_ptrs[ (cur + numNodes - 1)%numNodes];
-//     }
+//Neighbor of current iterate
+   Node& ccwNeighbor() const { return *node_ptrs[ ( cur + 1)%node_ptrs.numElts() ]; }
+   Node& cwNeighbor() const{
+      int numNodes = node_ptrs.numElts();
+      return *node_ptrs[ (cur + numNodes - 1)%numNodes];
+   }
 
-// private:
-//    const SimpleArray<Node> node_table;
-//     int cur;
-// };
+private:
+   const SimpleArray<Node*>& node_ptrs;
+   int cur;
+};
 
