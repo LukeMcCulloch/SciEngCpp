@@ -14,8 +14,8 @@ class NodesOfMesh;
 
 class Mesh {
 public:
-   friend ElementsOfMesh;    // iterator over elements of a mesh
-   friend NodesOfMesh;       // Iterator over nodes of a mesh
+   friend class ElementsOfMesh;    // iterator over elements of a mesh
+   friend class NodesOfMesh;       // Iterator over nodes of a mesh
    bool checkElementAngles(Number angle_threshold) const;
    Number maxAngle(const Element& e) const;
 

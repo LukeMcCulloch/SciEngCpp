@@ -20,7 +20,7 @@ public:
    //friend NodesOfElement;            // iterator over nodes of an element
 
    friend std::istream& operator>>(std::istream&, Element& );
-   friend std::ostream&  operator<<(std::ostream&, const Element& );
+   friend std::ostream& operator<<(std::ostream&, const Element& );
 
    Number maxAngle() const;
 
