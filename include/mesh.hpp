@@ -57,4 +57,12 @@ private:
 };
 
 
-//class NodeReader
+class NodeReader {
+public:
+   NodeReader(Mesh& m, istream& instream);
+   int getSize();
+   Node* getNode();
+private:
+   Mesh& mesh;
+   instream& in;
+};
