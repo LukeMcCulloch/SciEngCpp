@@ -37,3 +37,5 @@ private:
 
    Number dot( const Point& p1,  const Point& p2);
    Number cross( const Point& p1,  const Point& p2);
+
+
