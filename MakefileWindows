@@ -1,3 +1,5 @@
+# usage> make -f .\MakefileWindows
+
 ##########################################################################################
 
 # Specify library locations here (add or remove "#" marks to comment/uncomment lines for your platform)
