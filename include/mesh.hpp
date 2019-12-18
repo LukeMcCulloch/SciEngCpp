@@ -7,18 +7,12 @@
 
 typedef Point Node; 
 
-
-//class ElementsOfMesh;
-
-//class NodesOfMesh;
-
 class Mesh {
 public:
    friend class ElementsOfMesh;    // iterator over elements of a mesh
    friend class NodesOfMesh;       // Iterator over nodes of a mesh
 
    friend class NodeReader;
-   //friend class Element;
 
 
    bool checkElementAngles(Number angle_threshold) const;
