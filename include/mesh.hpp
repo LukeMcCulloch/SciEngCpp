@@ -32,37 +32,37 @@ private:
 
 class ElementsOfMesh {
 public:
-    ElementsOfMesh(const Mesh& m) :
-        element_table(m.element_table), cur(m.element_table.numElts()-1) {}
-    bool more() const { return cur >= 0; } // do more elements remain to be iterated?
-    void advance()    { --cur; }
-    const Element& current() const { return element_table[cur]; }
+   ElementsOfMesh(const Mesh& m) :
+      element_table(m.element_table), cur(m.element_table.numElts()-1) {}
+   bool more() const { return cur >= 0; } // do more elements remain to be iterated?
+   void advance()    { --cur; }
+   const Element& current() const { return element_table[cur]; }
 private:
    const SimpleArray<Element> element_table;
-    int cur;
+   int cur;
 };
 
 
 
 class NodesOfMesh {
 public:
-    NodesOfMesh(const Mesh& m) :
-        node_table(m.node_table), cur(m.node_table.numElts()-1) {}
-    bool more() const { return cur >= 0; } // do more elements remain to be iterated?
-    void advance()    { --cur; }
-    const Node& current() const { return node_table[cur]; }
+   NodesOfMesh(const Mesh& m) :
+      node_table(m.node_table), cur(m.node_table.numElts()-1) {}
+   bool more() const { return cur >= 0; } // do more elements remain to be iterated?
+   void advance()    { --cur; }
+   const Node& current() const { return node_table[cur]; }
 private:
    const SimpleArray<Node> node_table;
-    int cur;
+   int cur;
 };
 
 
 class NodeReader {
 public:
-   NodeReader(Mesh& m, istream& instream);
+   NodeReader(Mesh& m, std::istream& instream);
    int getSize();
    Node* getNode();
 private:
    Mesh& mesh;
-   instream& in;
+   std::istream& in;
 };

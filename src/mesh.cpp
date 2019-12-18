@@ -68,17 +68,74 @@ bool Mesh:: checkElementAngles(Number angle_threshold) const {
    return anglesOK;
 }
 
+// std::istream& operator>>(std::istream& instream, Mesh& m) {
+//    int nNodes;
+//    int nElements;
+//    instream >> nNodes >> nElements;
+//    m.node_table.setSize(nNodes);
+//    m.element_table.setSize(nElements);
+//    for (int nodeNum = 0; nodeNum < nNodes; nodeNum++) {
+//       instream >> m.node_table[nodeNum]; // read in one node (point)
+//    }
+//    for (int elementNum = 0; elementNum < nElements; elementNum++) {
+//       instream >>m.element_table[elementNum];  // read in one element
+//    }
+//    return instream;
+// }
+
+
+
+// page 215
+NodeReader::NodeReader(Mesh& m, std::istream& instream) :
+   mesh(m), in(instream) {}
+
+int NodeReader::getSize() {
+   int size;
+   in >> size;
+   return size;
+}
+
+Node* NodeReader::getNode() {
+   int nodeNum;
+   in >> nodeNum;
+   return &mesh.node_table[nodeNum];
+}
+
+void operator >> (NodeReader& reader, Element& e) {
+   int nNodesInElement = reader.getSize();
+   e.node_ptrs.setSize(nNodesInElement);
+   for (int i = 0; i < nNodesInElement; i++) {
+      e.node_ptrs[i] = reader.getNode();
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
 std::istream& operator>>(std::istream& instream, Mesh& m) {
+   // Set sizes of node and element tables
    int nNodes;
    int nElements;
    instream >> nNodes >> nElements;
    m.node_table.setSize(nNodes);
    m.element_table.setSize(nElements);
+
+   // Read nodes
    for (int nodeNum = 0; nodeNum < nNodes; nodeNum++) {
       instream >> m.node_table[nodeNum]; // read in one node (point)
    }
+
+   // Read elements
+   NodeReader reader(m, instream);
    for (int elementNum = 0; elementNum < nElements; elementNum++) {
-      instream >>m.element_table[elementNum];  // read in one element
+      reader >> m.element_table[elementNum];  // read in one element
    }
    return instream;
 }
