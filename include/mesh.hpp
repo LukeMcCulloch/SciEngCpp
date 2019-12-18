@@ -23,6 +23,8 @@ public:
    int numElements() const;  // no longer needed?
 
    friend std::istream& operator>>(std::istream&, Mesh&);
+
+   friend class NodeReader;
 private:
    SimpleArray<Node>    node_table;
    SimpleArray<Element> element_table;
