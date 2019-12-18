@@ -13,7 +13,6 @@
 #include "SimpleArray.cpp" 
 
 #include "element.hpp"
-//#include "element.cpp"
 
 #include "mesh.hpp"
 
@@ -108,8 +107,6 @@ void operator >> (NodeReader& reader, Element& e) {
       e.node_ptrs[i] = reader.getNode();
    }
 }
-
-
 
 
 

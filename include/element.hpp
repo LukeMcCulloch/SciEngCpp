@@ -10,6 +10,10 @@ typedef Point Node;        //Node class that behaves like a point
 
 class NodesOfElement;
 
+class NodeReader;
+
+class Mesh;
+
 
 class Element {
 
@@ -19,10 +23,19 @@ public:
    
    friend class NodesOfElement;            // iterator over nodes of an element
 
-   friend std::istream& operator>>(std::istream&, Element& );
-   friend std::ostream& operator<<(std::ostream&, const Element& );
+
+   //old istream
+   //friend std::istream& operator >> (std::istream&, Element& );
+   //friend std::ostream& operator << (std::ostream&, const Element& );
+
+
+   friend void operator >> (NodeReader& reader, Element& e);
+   friend std::ostream& operator << (std::ostream& os, const Element& e);
+
+
 
    Number maxAngle() const;
+
 
 private:
 
@@ -54,8 +67,12 @@ public:
       return *node_ptrs[ (cur + numNodes - 1)%numNodes];
    }
 
+   friend class Element;
+
 private:
    const SimpleArray<Node*>& node_ptrs;
    int cur;
 };
+
+
 

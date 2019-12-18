@@ -8,14 +8,19 @@
 typedef Point Node; 
 
 
-class ElementsOfMesh;
+//class ElementsOfMesh;
 
-class NodesOfMesh;
+//class NodesOfMesh;
 
 class Mesh {
 public:
    friend class ElementsOfMesh;    // iterator over elements of a mesh
    friend class NodesOfMesh;       // Iterator over nodes of a mesh
+
+   friend class NodeReader;
+   //friend class Element;
+
+
    bool checkElementAngles(Number angle_threshold) const;
    Number maxAngle(const Element& e) const;
 
@@ -24,7 +29,6 @@ public:
 
    friend std::istream& operator>>(std::istream&, Mesh&);
 
-   friend class NodeReader;
 private:
    SimpleArray<Node>    node_table;
    SimpleArray<Element> element_table;

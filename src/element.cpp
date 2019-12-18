@@ -23,13 +23,13 @@ int Element::numNodes() const {
    return node_numbers.numElts();
 }
 
-std::istream& operator>>(std::istream& instream, Element& e) {
-   int n;
-   instream >> n;
-   e.node_numbers.setSize(n);
-   for (int i = 0; i < n; i++) instream >> e.node_numbers[i];
-   return instream;
-}
+// std::istream& operator>>(std::istream& instream, Element& e) {
+//    int n;
+//    instream >> n;
+//    e.node_numbers.setSize(n);
+//    for (int i = 0; i < n; i++) instream >> e.node_numbers[i];
+//    return instream;
+// }
 
 std::ostream& operator<<(std::ostream& ostream, const Element& e) {
    int nn = e.numNodes();

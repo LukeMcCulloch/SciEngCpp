@@ -1,5 +1,8 @@
 #pragma once
 
+//class NodeReader;
+//class Mesh;
+
 template<class T>
 class SimpleArray {                                   // page 101
    
@@ -13,6 +16,10 @@ public:
    SimpleArray<T>& operator=(const SimpleArray<T>&);  // Array assignment
    SimpleArray<T>& operator=(T);                  // scalar assignment
    void setSize(int n);                               // Change size 
+
+   //friend class NodeReader;
+   //friend std::istream& operator>>(std::istream&, Mesh&);
+
 private:
    int num_elts;                                      // Number of elements
    T* ptr_to_data;                                // Pointer to builtin array of elements
